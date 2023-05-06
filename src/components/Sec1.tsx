@@ -12,7 +12,7 @@ const Sec1 = () => {
         <div className="flex flex-col justify-center gap-8 h-full pt-32">
           <div className="space-y-4 flex flex-col">
             <h1 className="text-3xl sm:text-4xl lg:text-[43px] font-bold text-white">Synergy Technology</h1>
-            <h2 className="text-3xl sm:text-4xl lg:text-[43px] font-bold text-white">Services</h2>
+            {/* <h2 className="text-3xl sm:text-4xl lg:text-[43px] font-bold text-white">Services</h2> */}
           </div>
           <div className="text-lg space-y-4 leading-9 sm:text-xl lg:text-2xl sm:leading-10 text-white font-medium">
             <p className="text-xl font-semibold">IT hardware & Electronic security products</p>

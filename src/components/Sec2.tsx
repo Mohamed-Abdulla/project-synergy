@@ -18,7 +18,10 @@ const Sec2 = () => {
         <h1 className="text-2xl sm:text-3xl font-semibold ">About US</h1>
         <p className="text-base leading-8 border-b">Get to know the originators of our own Synergy Technology</p>
       </motion.div>
-      <motion.div variants={footerVariants} className="flex items-center flex-col md:flex-row justify-evenly gap-10">
+      <motion.div
+        variants={footerVariants}
+        className="flex items-center sm:flex-col flex-col-reverse md:flex-row justify-evenly gap-10"
+      >
         <motion.div variants={footerVariants} className="flex-1">
           <div className="space-y-6">
             <div className="space-y-2">

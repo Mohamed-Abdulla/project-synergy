@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { footerVariants } from "../utils/motion";
+import email from "../assets/email.png";
+import mobile from "../assets/mobile.png";
 
 const GetInTouch = () => {
   const [form, setForm] = useState({});
@@ -28,6 +30,20 @@ const GetInTouch = () => {
         <div className="text-center">
           <h1 className="text-2xl sm:text-3xl font-semibold mb-3 ">GET IN TOUCH</h1>
           <p className="text-base leading-8">It&rsquo;s time to say a hi to us!</p>
+        </div>
+        <div className="text-sm text-gray-600 flex items-center gap-6 p-4">
+          <div className="bg-[#fcf4f5] p-4 rounded-lg flex items-center gap-3">
+            <img src={email} alt="email" className="w-7" />
+            <a href="mailto:mohamedabdulla.web@gmail.com" className="p_text">
+              mohamedabdulla.web@gmail.com
+            </a>
+          </div>
+          <div className="bg-blue-100 p-4 rounded-lg flex items-center gap-3">
+            <img src={mobile} alt="" className="w-7" />
+            <a href="tel:+91 9566711884" className="p_text">
+              +91 9566711884
+            </a>
+          </div>
         </div>
 
         <form className="space-y-4 mt-6 md:w-[700px] lg:w-[800px]" onSubmit={handleSubmit}>
