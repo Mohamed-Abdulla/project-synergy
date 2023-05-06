@@ -9,6 +9,7 @@ const GetInTouch = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    // window.location.href = `mailto:be@aruttcorp.com?subject=${form.name}&body=Hi, my name is ${form.name}. ${form.message}`;
   };
   const handleForm = (e: any) => {
     setForm((prev) => {
@@ -31,8 +32,8 @@ const GetInTouch = () => {
           <h1 className="text-2xl sm:text-3xl font-semibold mb-3 ">GET IN TOUCH</h1>
           <p className="text-base leading-8">It&rsquo;s time to say a hi to us!</p>
         </div>
-        <div className="text-sm text-gray-600 flex items-center gap-6 p-4">
-          <div className="bg-[#fcf4f5] p-4 rounded-lg flex items-center gap-3">
+        <div className="text-sm text-gray-600 flex flex-col sm:flex-row items-center gap-6 p-4">
+          <div className="bg-blue-100 p-4 rounded-lg flex items-center gap-3">
             <img src={email} alt="email" className="w-7" />
             <a href="mailto:mohamedabdulla.web@gmail.com" className="p_text">
               mohamedabdulla.web@gmail.com
