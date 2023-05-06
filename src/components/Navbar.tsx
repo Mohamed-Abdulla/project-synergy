@@ -42,8 +42,8 @@ const Navbar = () => {
       <div className="relative">
         <Bars3BottomLeftIcon className="w-8 h-8 cursor-pointer md:invisible" onClick={() => setToggle(true)} />
         {toggle && (
-          // <motion.div whileInView={{ x: [100, 0] }} transition={{ duration: 0.85, ease: "easeOut" }}>
-          <div className="h-screen p-4 md:hidden fixed top-0 bottom-0 right-0 w-3/4 bg-[#EDF2F8] flex flex-col items-end justify-end">
+          // <motion.div whileInView={{ x: [300, 0] }} transition={{ duration: 0.85, ease: "easeOut" }}>
+          <div className="h-screen p-4  md:hidden fixed top-0 bottom-0 right-0 w-3/4 bg-[#EDF2F8] flex flex-col items-end justify-end z-20">
             <XMarkIcon className="w-8 h-8 cursor-pointer" onClick={() => setToggle(false)} />
             <ul className="flex flex-col items-start justify-start h-full w-full">
               {navData.map((item, i) => (

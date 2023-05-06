@@ -9,7 +9,7 @@ import { footerVariants } from "../utils/motion";
 const Footer = () => {
   return (
     <footer className=" bg-[#0631A1] px-6 sm:px-16 md:px-24 lg:px-36 xl:px-52 text-white font-normal py-6 ">
-      <motion.div variants={footerVariants} className="space-y-6">
+      <motion.div variants={footerVariants} className="space-y-6" initial="hidden" whileInView="show">
         <div className="flex flex-row sm:items-center justify-between">
           <a href="#get_in_touch">
             <div className="flex gap-4 sm:gap-0 items-end">

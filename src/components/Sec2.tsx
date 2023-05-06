@@ -20,9 +20,11 @@ const Sec2 = () => {
       </motion.div>
       <motion.div
         variants={footerVariants}
+        initial="hidden"
+        whileInView="show"
         className="flex items-center sm:flex-col flex-col-reverse md:flex-row justify-evenly gap-10"
       >
-        <motion.div variants={footerVariants} className="flex-1">
+        <motion.div className="flex-1" variants={footerVariants} initial="hidden" whileInView="show">
           <div className="space-y-6">
             <div className="space-y-2">
               <h2 className="text-lg sm:text-xl font-semibold">Mohamed Ibrahim P</h2>
@@ -43,9 +45,9 @@ const Sec2 = () => {
             </div>
           </div>
         </motion.div>
-        <div className="flex-1">
+        <motion.div className="flex-1" variants={footerVariants} initial="hidden" whileInView="show">
           <img src={founder} alt="founder" />
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );
