@@ -35,15 +35,11 @@ const GetInTouch = () => {
         <div className="text-sm text-gray-600 flex flex-col sm:flex-row items-center gap-6 p-4">
           <div className="bg-blue-100 p-4 rounded-lg flex items-center gap-3">
             <img src={email} alt="email" className="w-7" />
-            <a href="mailto:mohamedabdulla.web@gmail.com" className="p_text">
-              mohamedabdulla.web@gmail.com
-            </a>
+            <a href="mailto:info@mysynergy.in">info@mysynergy.in</a>
           </div>
           <div className="bg-blue-100 p-4 rounded-lg flex items-center gap-3">
             <img src={mobile} alt="" className="w-7" />
-            <a href="tel:+91 9566711884" className="p_text">
-              +91 9566711884
-            </a>
+            <a href="tel:+91 9566711884">+91 9566711884</a>
           </div>
         </div>
 

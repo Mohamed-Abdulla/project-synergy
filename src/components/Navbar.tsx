@@ -32,7 +32,7 @@ const Navbar = () => {
                 ${i === 3 && "border border-blue-800 text-sm lg:text-base  rounded-full py-0.5 px-2 relative"}
                 hidden md:inline `}
             >
-              <a href={`/${item.link}`} key={i} className="hover:text-[#FFCC04] ">
+              <a href={`/${item.link}`} key={i} className="hover:text-gray-500">
                 {item.name}
               </a>
             </li>
