@@ -26,7 +26,7 @@ const Sec4 = () => {
             className="space-y-4  lg:flex-1"
             key={i}
           >
-            <img src={item.img} alt={item.title} className="w-full rounded-md" />
+            <img src={item.img} alt={item.title} className="w-full rounded-md" loading="lazy" />
             <h2 className="text-sm md:text-base font-medium text-center">{item.title}</h2>
           </motion.div>
         ))}
