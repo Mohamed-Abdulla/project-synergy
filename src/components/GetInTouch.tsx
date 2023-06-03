@@ -23,7 +23,8 @@ const GetInTouch = () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    const webhookUrl = "https://hooks.slack.com/services/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";
+    // const webhookUrl = "https://hooks.slack.com/services/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";
+    const webhookUrl = "https://hooks.slack.com/services/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";
 
     const data = {
       text: `Name: ${form.name} \nEmail: ${form.email} \nPhone Number: ${form.number} \nCompany Name: ${form.company_name} \nMessage: ${form.message}`,
@@ -125,7 +126,7 @@ const GetInTouch = () => {
             <div className="form-group w-full">
               <input
                 type="text"
-                name="company name"
+                name="company_name"
                 onChange={handleForm}
                 value={form?.company_name}
                 placeholder="Company Name"

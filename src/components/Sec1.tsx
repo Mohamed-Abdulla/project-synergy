@@ -1,10 +1,29 @@
+import { useEffect, useState } from "react";
 import { styles } from "../styles";
 import { motion } from "framer-motion";
+import Loader from "./Loader";
+import main from "../assets/main.svg";
 
 const Sec1 = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const image = new Image();
+
+    image.onload = () => {
+      setIsLoading(false);
+    };
+
+    image.src = main;
+  }, [isLoading]);
+
   return (
     <>
-      <section className={`${styles.xPaddings} hero_bg h-screen  px-6 sm:px-16 md:px-24 lg:px-36 py-16 `}>
+      {isLoading && <Loader />}
+      <section
+        className={`${styles.xPaddings} hero_bg h-screen  px-6 sm:px-16 md:px-24 lg:px-36 py-16 ${
+          isLoading ? "hidden" : "block"
+        }`}
+      >
         <motion.div
           className={`${styles.innerWidth} mx-auto h-full  flex flex-col `}
           whileInView={{ x: [-100, 0], opacity: [0, 1] }}
