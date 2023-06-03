@@ -10,7 +10,6 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
-  console.log(toggle);
   return (
     <motion.nav
       variants={navVariants}

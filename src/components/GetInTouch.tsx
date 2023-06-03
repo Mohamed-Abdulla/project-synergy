@@ -4,12 +4,52 @@ import { footerVariants } from "../utils/motion";
 import email from "../assets/email.png";
 import mobile from "../assets/mobile.png";
 
-const GetInTouch = () => {
-  const [form, setForm] = useState({});
+interface FormState {
+  name: string;
+  email: string;
+  message: string;
+  number: string;
+  company_name: string;
+}
 
-  const handleSubmit = (e: any) => {
+const GetInTouch = () => {
+  const [form, setForm] = useState<FormState>({
+    name: "",
+    email: "",
+    number: "",
+    company_name: "",
+    message: "",
+  });
+
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // window.location.href = `mailto:be@aruttcorp.com?subject=${form.name}&body=Hi, my name is ${form.name}. ${form.message}`;
+    const webhookUrl = "https://hooks.slack.com/services/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";
+
+    const data = {
+      text: `Name: ${form.name} \nEmail: ${form.email} \nPhone Number: ${form.number} \nCompany Name: ${form.company_name} \nMessage: ${form.message}`,
+    };
+    try {
+      let res = await fetch(webhookUrl, {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        alert("Message Sent!");
+        setForm({
+          name: "",
+          email: "",
+          number: "",
+          company_name: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Request failed");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("There was an error. Please try again later.");
+    }
   };
   const handleForm = (e: any) => {
     setForm((prev) => {
@@ -19,7 +59,6 @@ const GetInTouch = () => {
       };
     });
   };
-  console.log(form);
   return (
     <section id="get_in_touch" className="px-6 sm:px-16 md:px-24 lg:px-36 xl:px-52 py-16 bg-[#EDF2F8]">
       <motion.div
@@ -51,6 +90,7 @@ const GetInTouch = () => {
                 onChange={handleForm}
                 name="name"
                 placeholder="Name"
+                value={form?.name}
                 required
                 className="w-full form-control px-6 py-3 text-base font-normal  text-gray-700 bg-[#E3E8F1] bg-clip-padding border border-solid border-blue-100 rounded transition ease-in-out m-0
           focus:text-gray-700 focus:bg-[#E3E8F1] focus:border-[#FFC444] focus:outline-none"
@@ -61,6 +101,7 @@ const GetInTouch = () => {
                 type="email"
                 name="email"
                 onChange={handleForm}
+                value={form?.email}
                 placeholder="Email-Address"
                 required
                 className="w-full form-control px-6 py-3 text-base font-normal  text-gray-700 bg-[#E3E8F1] bg-clip-padding border border-solid border-blue-100 rounded transition ease-in-out m-0
@@ -71,9 +112,10 @@ const GetInTouch = () => {
           <div className="flex flex-col sm:items-center justify-center sm:flex-row gap-4  ">
             <div className="form-group w-full">
               <input
-                type="number"
+                type="tel"
                 name="number"
                 onChange={handleForm}
+                value={form?.number}
                 placeholder="Phone Number"
                 required
                 className="w-full form-control px-6 py-3 text-base font-normal  text-gray-700 bg-[#E3E8F1] bg-clip-padding border border-solid border-blue-100 rounded transition ease-in-out m-0
@@ -85,6 +127,7 @@ const GetInTouch = () => {
                 type="text"
                 name="company name"
                 onChange={handleForm}
+                value={form?.company_name}
                 placeholder="Company Name"
                 className="w-full form-control px-6 py-3 text-base font-normal  text-gray-700 bg-[#E3E8F1] bg-clip-padding border border-solid border-blue-100 rounded transition ease-in-out m-0
           focus:text-gray-700 focus:bg-[#E3E8F1] focus:border-[#FFC444] focus:outline-none"
@@ -96,6 +139,7 @@ const GetInTouch = () => {
               <textarea
                 name="message"
                 onChange={handleForm}
+                value={form?.message}
                 placeholder="Enter your message"
                 className="w-full form-control px-6 py-3 text-base font-normal  text-gray-700 bg-[#E3E8F1] bg-clip-padding border border-solid border-blue-100 rounded transition ease-in-out m-0
               focus:text-gray-700 focus:bg-[#E3E8F1] focus:border-[#FFC444] focus:outline-none"
